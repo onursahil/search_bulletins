@@ -8,20 +8,20 @@
 	<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body>
+<body class='body'>
 
-	<h1>Bulletin Search Results</h1>
+	<h1 class='result-title shadow-3d'>Bulletin Search Results</h1>
 	{% for key in search_q %}
-		<h1>Search Keyword: {{ key.keyword }}</h1>
+		<h1 class='search-keyword shadow-3d'>Search Keyword: {{ key.keyword }}</h1>
 	{% endfor %}
 	{% for post in posts %}
 	<main role="main" class="container">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-8 result-col">
 				<article class="media content-section">
 				  <div class="media-body">
 				    <div class="article-metadata">
-				      <small class="text-muted">{{ post.post_date }}</small>
+				      <small class="text-muted">published date: {{ post.post_date }}</small>
 				    </div>
 				    <h2><a href={{ post.link }}><p>{{ post.title }}</p></a></h2>
 				  </div>
